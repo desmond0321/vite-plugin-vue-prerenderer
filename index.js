@@ -136,6 +136,14 @@ function prerendererTrim(renderedRoute, options) {
       html = html.replace(/<title>/, meta + "<title>");
     }
 
+    // Dynamically inject additional meta tags like og:image
+    if (routeOptions.metaTags) {
+      Object.keys(routeOptions.metaTags).forEach(key => {
+        const metaTag = `<meta property="${key}" content="${routeOptions.metaTags[key]}">`;
+        html = html.replace(/<head>/, `<head>${metaTag}`);
+      });
+    }
+
     return html;
   } catch (error) {
     console.warn("[vite-plugin-vue-prerenderer] " + err);
