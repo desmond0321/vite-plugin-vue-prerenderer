@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup --config",
-    "postinstall": "npm i; npm run build"
+    "postinstall": "npm run build"
   },
   "keywords": [
     "vite",
@@ -18,8 +18,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/shaolong1314/vite-plugin-vue-prerenderer.git"
-  },
+    "url": "https://github.com/desmond0321/vite-plugin-vue-prerenderer.git"
+  },  
   "author": "shaolong_zheng",
   "license": "MIT",
   "dependencies": {
