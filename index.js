@@ -139,7 +139,7 @@ function prerendererTrim(renderedRoute, options) {
     // Dynamically inject additional meta tags like og:image
     if (routeOptions.metaTags) {
       Object.keys(routeOptions.metaTags).forEach(key => {
-        const metaTag = `<meta property="${key}" content="${routeOptions.metaTags[key]}">`;
+        const metaTag = `<meta ${routeOptions.metaTags[key].protocol ?? "property"}="${key}" content="${routeOptions.metaTags[key].content}">`;
         html = html.replace(/<head>/, `<head>${metaTag}`);
       });
     }
